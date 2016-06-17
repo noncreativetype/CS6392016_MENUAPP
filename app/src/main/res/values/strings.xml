@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MenuApp</string>
+    <string name="SMS">SMS</string>
+    <string name="PHONE">PHONE</string>
+    <string name="WEB">WEB</string>
+    <string name="MAP">MAP</string>
+    <string name="SHARE">SHARE</string>
+    <string name="NEWACTIVITY">NEW ACTIVITY</string>
+    <string name="HELP">HELP</string>
+    <string name="SETTINGS">SETTINGS</string>
+    <string name="MENU">MENU</string>
+
+</resources>
