@@ -2,27 +2,32 @@ package com.example.fabianpatino.menuapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Bundle;
 import android.app.Activity;
 import android.telephony.SmsManager;
+import android.net.Uri;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.content.Intent;
 import android.widget.Toast;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
     Button sendBtn;
+    Button button2;
+
     public String txtphoneNo = "9142991173";
     String txtMessage = "hello";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sendBtn = (Button) findViewById(R.id.btnSendSMS);
-      // txtphoneNo = 9142991173 ;
-//        txtMessage = (EditText) findViewById(R.id.editText2);
+        button2 = (Button) findViewById(R.id.button2);
+        call();
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -30,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+        private void call() {
+            Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("9142991173"));
+            try{
+                startActivity(in);
+            }
+
+            catch (android.content.ActivityNotFoundException ex){
+                Toast.makeText(getApplicationContext(),"yourActivity is not founded",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+///////////////////////////////
     protected void sendSMSMessage() {
         Log.i("Send SMS", "");
         String phoneNo = txtphoneNo;
@@ -46,12 +63,4 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-   // @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-
-    }
-
+}
