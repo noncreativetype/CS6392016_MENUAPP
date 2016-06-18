@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MenuApp</string>
+    <string name="app_name">FabianMenuApp</string>
     <string name="SMS">SMS</string>
     <string name="PHONE">PHONE</string>
     <string name="WEB">WEB</string>
