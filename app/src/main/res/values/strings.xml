@@ -9,5 +9,8 @@
     <string name="HELP">HELP</string>
     <string name="SETTINGS">SETTINGS</string>
     <string name="MENU">MENU</string>
+    <string name="open">MENU</string>
+    <string name="create_new">MENU</string>
+    <string name="file">MENU</string>
 
 </resources>

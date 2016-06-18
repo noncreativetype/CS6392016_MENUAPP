@@ -7,12 +7,14 @@ import android.telephony.SmsManager;
 import android.net.Uri;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.Toast;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.Toolbar;
+import android.view.ContextMenu;
 
 public class MainActivity extends AppCompatActivity {
     Button sendBtn;
@@ -21,7 +23,12 @@ public class MainActivity extends AppCompatActivity {
     public String txtphoneNo = "9142991173";
     String txtMessage = "hello";
 
+
     @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    };
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -76,6 +83,16 @@ public class MainActivity extends AppCompatActivity {
             intent.setData(Uri.parse("tel:914-299-1173"));
             startActivity(intent);
         }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.action_help){
+            startActivity(new Intent(MainActivity.this, HelpActivity.class));
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 ///////////////////////////////
     protected void sendSMSMessage() {
         Log.i("Send SMS", "");
